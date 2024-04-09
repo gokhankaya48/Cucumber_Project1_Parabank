@@ -97,10 +97,16 @@ public class DialogContent extends ParentPage {
     public WebElement paymentAccount;
     @FindBy(xpath = "//a[contains(text(),'Bill Payment to')]")
     public WebElement billPaymentText;
-    @FindBy(xpath = "//span[contains(text(),'34323')]")
+    @FindBy(xpath = "//td[@id='accountId']")
     public WebElement accountNumber;
-    @FindBy(xpath = "//span[contains(text(),'$')]")
-    public WebElement pay;
+    @FindBy(xpath = "(//option[contains(text(),'')])[1]")
+    public WebElement fromAccount;
+    @FindBy(xpath = "//span[@id='fromAccountId']")
+    public WebElement successAcount;
+    @FindBy(xpath = "//span[@id='amount']")
+    public WebElement successAmount;
+    @FindBy(xpath = "(//td[@class='ng-binding ng-scope'])[1]")
+    public WebElement debitAmount;
 
 
 

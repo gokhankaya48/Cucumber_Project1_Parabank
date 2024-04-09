@@ -47,4 +47,5 @@ public class ParentPage {
         //sayfaya ESC tuşu gönderildi
     }
 
+
 }

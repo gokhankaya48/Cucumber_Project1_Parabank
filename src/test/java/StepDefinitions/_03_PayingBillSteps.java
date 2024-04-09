@@ -2,17 +2,11 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
+import io.cucumber.java.en.*;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-import java.lang.reflect.Type;
 import java.util.List;
-import java.util.Map;
 
 public class _03_PayingBillSteps {
     DialogContent dc = new DialogContent();
@@ -36,19 +30,32 @@ public class _03_PayingBillSteps {
             WebElement txtBoxWebElemnt = dc.getWebElement(listText.get(i).get(0));
             dc.mySendKeys(txtBoxWebElemnt, listText.get(i).get(1));
         }
+        //String id =dc.fromAccount.getText();
+        //System.out.println(id);
+
     }
 
     @Then("the user should receive a confirmation message for the successful payment")
     public void theUserShouldReceiveAConfirmationMessageForTheSuccessfulPayment() {
+        //System.out.println(dc.fromAccount.getText());
         dc.verifyContainsText(dc.paymentCompleteText,"Complete");
-        dc.verifyContainsText(dc.accountNumber,"34323");
+        dc.verifyContainsText(dc.successAcount,dc.fromAccount.getText());
+        //System.out.println(dc.successAcount.getText());
+
+
+
 
 
     }
 
     @And("the user should verify that the electricity bill is added to the list of paid bills")
     public void theUserShouldVerifyThatTheElectricityBillIsAddedToTheListOfPaidBills() {
+        System.out.println(dc.debitAmount.getText());
+        //dc.verifyContainsText(dc.successAmount,dc.debitAmount.getText());
+
+
         dc.verifyContainsText(dc.billPaymentText,"Bill Payment to");
+
 
     }
 }
