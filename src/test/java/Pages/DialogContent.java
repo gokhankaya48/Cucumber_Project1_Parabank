@@ -107,6 +107,18 @@ public class DialogContent extends ParentPage {
     public WebElement successAmount;
     @FindBy(xpath = "(//td[@class='ng-binding ng-scope'])[1]")
     public WebElement debitAmount;
+    @FindBy(xpath = "//a[text()='Open New Account']")
+    public WebElement openNewAccount;
+    @FindBy(xpath = "//select[@id='type']")
+    public WebElement selectType;
+    @FindBy(xpath = "//select[@id='fromAccountId']")
+    public WebElement minimumAccount;
+    @FindBy(xpath = "//input[@value='Open New Account']")
+    public WebElement OpenNewAccountButton;
+    @FindBy(xpath = "//h1[text()='Account Opened!']")
+    public WebElement AccountOpenedText;
+    @FindBy(xpath = "//a[@id='newAccountId']")
+    public WebElement newAccountId;
 
 
 
