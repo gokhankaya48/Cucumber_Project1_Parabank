@@ -5,14 +5,15 @@ import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+
+import javax.tools.Tool;
 
 public class _04_NewAccountSteps {
     DialogContent dc = new DialogContent();
-    @When("the user navigates to the account creation page")
-    public void theUserNavigatesToTheAccountCreationPage() {
-        dc.myClick(dc.openNewAccount);
-    }
+
 
     @And("the user selects the account type as Checking")
     public void theUserSelectsTheAccountTypeAsChecking() {
@@ -21,14 +22,15 @@ public class _04_NewAccountSteps {
     }
 
     @And("the user selects the initial balance for the checking account")
-    public void theUserSelectsTheInitialBalanceForTheCheckingAccount() {
+    public void theUserSelectsTheInitialBalanceForTheCheckingAccount(){
         Select minimumAccount=new Select(dc.minimumAccount);
         minimumAccount.selectByIndex(0);
+        dc.verifyContainsText(dc.minBalance,"A minimum of");
     }
-
     @And("the user clicks on the Open New Account button")
-    public void theUserClicksOnTheButton() {
-        dc.myClick(dc.OpenNewAccountButton);
+    public void theUserClicksOnTheOpenNewAccountButton() {
+        dc.hoverOver(dc.openNewAccountButton);
+        new Actions(GWD.getDriver()).click(dc.openNewAccountButton).build().perform();
     }
 
     @Then("the user should receive a confirmation message with the new account number")
@@ -36,5 +38,25 @@ public class _04_NewAccountSteps {
 
         dc.verifyContainsText(dc.AccountOpenedText,"Account Opened!");
         dc.verifyContainsText(dc.newAccountId,dc.newAccountId.getText());
+    }
+
+
+    @And("the user selects the account type as Savings")
+    public void theUserSelectsTheAccountTypeAsSavings() {
+        Select checking=new Select(dc.selectType);
+        checking.selectByIndex(1);
+    }
+
+    @And("the user selects the initial balance for the Savings account")
+    public void theUserSelectsTheInitialBalanceForTheSavingsAccount() {
+        Select minimumAccount=new Select(dc.minimumAccount);
+        minimumAccount.selectByIndex(0);
+        dc.verifyContainsText(dc.minBalance,"A minimum of");
+    }
+
+    @And("the user clicks on the actions Open New Account button")
+    public void theUserClicksOnTheActionsOpenNewAccountButton() {
+        dc.hoverOver(dc.openNewAccountButton);
+        new Actions(GWD.getDriver()).click(dc.savingsOpenNewAccountButton).build().perform();
     }
 }

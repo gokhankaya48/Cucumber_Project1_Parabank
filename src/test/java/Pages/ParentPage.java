@@ -4,6 +4,7 @@ import Utilities.GWD;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -37,6 +38,12 @@ public class ParentPage {
         JavascriptExecutor js=(JavascriptExecutor) GWD.getDriver();
         wait.until(ExpectedConditions.visibilityOf(element));
         js.executeScript("arguments[0].click();", element);
+    }
+    public void hoverOver(WebElement element){
+        Actions aksiyonDriver=new Actions(GWD.getDriver());
+        wait.until(ExpectedConditions.visibilityOf(element));
+        Action aksiyon=aksiyonDriver.moveToElement(element).build();
+        aksiyon.perform();
     }
 
     public void verifyContainsText(WebElement element, String value){

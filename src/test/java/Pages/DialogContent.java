@@ -113,12 +113,16 @@ public class DialogContent extends ParentPage {
     public WebElement selectType;
     @FindBy(xpath = "//select[@id='fromAccountId']")
     public WebElement minimumAccount;
-    @FindBy(xpath = "//input[@value='Open New Account']")
-    public WebElement OpenNewAccountButton;
+    @FindBy(xpath = "//b[text()='A minimum of $100,00 must be deposited into this account at time of opening. Please choose an existing account to transfer funds into the new account.']")
+    public WebElement minBalance;
+    @FindBy(xpath = "//input[@type='submit']")
+    public WebElement openNewAccountButton;
     @FindBy(xpath = "//h1[text()='Account Opened!']")
     public WebElement AccountOpenedText;
     @FindBy(xpath = "//a[@id='newAccountId']")
     public WebElement newAccountId;
+    @FindBy(xpath = "(//*[@class='button'])[2]")
+    public WebElement savingsOpenNewAccountButton;
 
 
 
@@ -140,6 +144,9 @@ public class DialogContent extends ParentPage {
             case "sendPayment":return this.sendPayment;
             case "accountsOverview":return this.accountsOverview;
             case "paymentAccount":return this.paymentAccount;
+            case "openNewAccountButton":return this.openNewAccountButton;
+            case "openNewAccount":return this.openNewAccount;
+            case "savingsOpenNewAccountButton":return this.savingsOpenNewAccountButton;
 
         }
 
