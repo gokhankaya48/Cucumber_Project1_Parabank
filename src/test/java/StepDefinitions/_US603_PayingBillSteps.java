@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class _03_PayingBillSteps {
+public class _US603_PayingBillSteps {
     DialogContent dc = new DialogContent();
 
     @When("Click on the Element in Dialog")
@@ -28,6 +28,7 @@ public class _03_PayingBillSteps {
         List<List<String>> listText = dataTable.asLists(String.class);
         for (int i = 0; i < listText.size(); i++) {
             WebElement txtBoxWebElemnt = dc.getWebElement(listText.get(i).get(0));
+
             dc.mySendKeys(txtBoxWebElemnt, listText.get(i).get(1));
         }
         //String id =dc.fromAccount.getText();

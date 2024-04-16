@@ -5,7 +5,7 @@ import Utilities.GWD;
 import io.cucumber.java.en.*;
 
 
-public class _01_RegisterSteps {
+public class _US601_RegisterSteps {
     DialogContent dc=new DialogContent();
     @Given("Navigate to Para Bank")
     public void navigateToParaBank() {
@@ -24,7 +24,7 @@ public class _01_RegisterSteps {
         dc.mySendKeys(dc.zipCode,"48600");
         dc.mySendKeys(dc.phoneNumber,"90505555555");
         dc.mySendKeys(dc.ssn,"555544");
-        dc.mySendKeys(dc.userName,"gkktrc");
+        dc.mySendKeys(dc.userName,"gokhan1");
         dc.mySendKeys(dc.password,"456987");
         dc.mySendKeys(dc.repeatedPassword,"456987");
         dc.myClick(dc.registerButton);

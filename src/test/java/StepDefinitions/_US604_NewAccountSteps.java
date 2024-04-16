@@ -4,14 +4,10 @@ import Pages.DialogContent;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 
-import javax.tools.Tool;
-
-public class _04_NewAccountSteps {
+public class _US604_NewAccountSteps {
     DialogContent dc = new DialogContent();
 
 

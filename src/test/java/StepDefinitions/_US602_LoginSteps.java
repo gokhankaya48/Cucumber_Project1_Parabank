@@ -3,12 +3,12 @@ package StepDefinitions;
 import Pages.DialogContent;
 import io.cucumber.java.en.*;
 
-public class _02_LoginSteps {
+public class _US602_LoginSteps {
     DialogContent dc = new DialogContent();
 
     @When("The user enters valid username, password and click login button")
     public void theUserEntersValidUsernamePasswordAndClickLoginButton() {
-        dc.mySendKeys(dc.loginUserName, "gkktrc");
+        dc.mySendKeys(dc.loginUserName, "gokhan1");
         dc.mySendKeys(dc.loginPassword, "456987");
         dc.myClick(dc.loginButton);
     }
@@ -20,7 +20,7 @@ public class _02_LoginSteps {
 
     @When("The user enters invalid username, password and click login button")
     public void theUserEntersInvalidUsernamePasswordAndClickLoginButton() {
-        dc.mySendKeys(dc.loginUserName, "gkktrs");
+        dc.mySendKeys(dc.loginUserName, "gkktrc");
         dc.mySendKeys(dc.loginPassword, "456944");
         dc.myClick(dc.loginButton);
 

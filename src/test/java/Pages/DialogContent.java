@@ -5,7 +5,6 @@ import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class DialogContent extends ParentPage {
 
@@ -105,7 +104,7 @@ public class DialogContent extends ParentPage {
     public WebElement successAcount;
     @FindBy(xpath = "//span[@id='amount']")
     public WebElement successAmount;
-    @FindBy(xpath = "(//td[@class='ng-binding ng-scope'])[1]")
+    @FindBy(xpath = "(//td[@class='ng-binding ng-scope'])[2]")
     public WebElement debitAmount;
     @FindBy(xpath = "//a[text()='Open New Account']")
     public WebElement openNewAccount;
@@ -123,6 +122,74 @@ public class DialogContent extends ParentPage {
     public WebElement newAccountId;
     @FindBy(xpath = "(//*[@class='button'])[2]")
     public WebElement savingsOpenNewAccountButton;
+    @FindBy(xpath = "//a[text()='Update Contact Info']")
+    public WebElement updateContactInfo;
+    @FindBy(id = "customer.firstName")
+    public WebElement updateFirstName;
+    @FindBy(id="customer.lastName")
+    public WebElement updateLastName;
+    @FindBy(id = "customer.address.street")
+    public WebElement updateAddress;
+    @FindBy(id = "customer.address.city")
+    public WebElement updateCity;
+    @FindBy(id = "customer.address.state")
+    public WebElement updateState;
+    @FindBy(id="customer.address.zipCode")
+    public WebElement updateZipCode;
+    @FindBy(id = "customer.phoneNumber")
+    public WebElement updatePhoneNumber;
+    @FindBy(xpath = "//input[@value='Update Profile']")
+    public WebElement updateProfileButton;
+    @FindBy(xpath = "//h1[text()='Profile Updated']")
+    public WebElement profileUpdated;
+    @FindBy(xpath = "//p[@class='smallText']")
+    public WebElement smallText;
+    @FindBy(xpath = "//span[text()='First name is required.']")
+    public WebElement firstNameIsRequiredText;
+    @FindBy(xpath = "//span[text()='Last name is required.']")
+    public WebElement lastNameIsRequiredText;
+    @FindBy(xpath = "//span[text()='Address is required.']")
+    public WebElement addressIsRequiredText;
+    @FindBy(xpath = "//a[text()='Transfer Funds']")
+    public WebElement transferFunds;
+    @FindBy(xpath = "//input[@id='amount']")
+    public WebElement amount;
+    @FindBy(xpath = "//input[@value='Transfer']")
+    public WebElement transferButton;
+    @FindBy(xpath = "//span[@id='fromAccountId']")
+    public WebElement fromAccountIdText;
+    @FindBy(xpath = "//span[@id='toAccountId']")
+    public WebElement toAccountIdText;
+    @FindBy(xpath = "//span[@id='amount']")
+    public WebElement amountText;
+    @FindBy(xpath = "//h1[text()='Transfer Complete!']")
+    public WebElement transferCompleteText;
+    @FindBy(xpath = "//a[contains(@href,'activity.htm?id=')]")
+    public WebElement accountInAccounts;
+    @FindBy(xpath = "//select[@id='fromAccountId']")
+    public WebElement selectFromAccountId;
+    @FindBy(xpath = "//select[@id='toAccountId']")
+    public WebElement selectToAccountId;
+    @FindBy(xpath = "//td[text()='$500.00']")
+    public WebElement fundTransferReceivedText;
+    @FindBy(xpath = "(//a[text()='Funds Transfer Received'])[1]")
+    public WebElement fundsTransferReceived;
+    @FindBy(xpath = "(//td[contains(text(),'')])[2]")
+    public WebElement TransactionIDText;
+    @FindBy(xpath = "//a[text()='Find Transactions']")
+    public WebElement findTransactions;
+    @FindBy(xpath = "//input[@id='criteria.transactionId']")
+    public WebElement transactionIdInput;
+    @FindBy(xpath = "(//button[@type='submit'])[1]")
+    public WebElement findTransactionsButton;
+    @FindBy(xpath = "//span[text()='$500.00']")
+    public WebElement transactionResultsText;
+
+
+
+
+
+
 
 
 
@@ -147,6 +214,19 @@ public class DialogContent extends ParentPage {
             case "openNewAccountButton":return this.openNewAccountButton;
             case "openNewAccount":return this.openNewAccount;
             case "savingsOpenNewAccountButton":return this.savingsOpenNewAccountButton;
+            case "updateContactInfo":return this.updateContactInfo;
+            case "updateFirstName":return this.updateFirstName;
+            case "updateLastName":return this.updateLastName;
+            case "updateAddress":return this.updateAddress;
+            case "updateCity":return this.updateCity;
+            case "updateState":return this.updateState;
+            case "updateZipCode":return this.updateZipCode;
+            case "updatePhoneNumber":return this.updatePhoneNumber;
+            case "updateProfileButton":return this.updateProfileButton;
+            case "transferFunds":return this.transferFunds;
+            case "transferButton":return this.transferButton;
+            case "accountInAccounts":return this.accountInAccounts;
+
 
         }
 
