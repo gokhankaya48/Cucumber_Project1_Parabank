@@ -14,6 +14,7 @@ Feature: New Account Functionality
     And the user clicks on the Open New Account button
     Then the user should receive a confirmation message with the new account number
 
+  @Accounts, @Smoke, @Regression
   Scenario: User creates a checking account
     When Click on the Element in Dialog
       | openNewAccount |

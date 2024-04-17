@@ -5,6 +5,7 @@ Feature: Money Transfer Functionality
     When The user enters valid username, password and click login button
     Then The user should login successfully
 
+  @Payment,@Regression
   Scenario: Money transfer between my accounts
     Given Click on the Element in Dialog
       | transferFunds |
@@ -17,6 +18,7 @@ Feature: Money Transfer Functionality
       | accountInAccounts |
     Then The user verify fund transfer received details
 
+  @Payment,@Regression
   Scenario: Money transfer between my accounts
     Given Click on the Element in Dialog
       | transferFunds |

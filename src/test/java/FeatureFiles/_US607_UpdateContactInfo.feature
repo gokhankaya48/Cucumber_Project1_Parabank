@@ -5,6 +5,7 @@ Feature: Update Contact Information Functionality
     When The user enters valid username, password and click login button
     Then The user should login successfully
 
+  @Contact, @Accounts
   Scenario Outline: User updates contact information
     When Click on the Element in Dialog
       | updateContactInfo |
